@@ -105,63 +105,6 @@ export default function About() {
         </div>
       </section>
 
-      {/* Leadership Team */}
-      <section>
-        <h2 className="text-3xl font-bold mb-8 text-center">Leadership</h2>
-<div className="grid md:grid-cols-3 gap-8">
-  {/* CEO */}
-  <div className="bg-white dark:bg-slate-900 rounded-xl p-6 shadow border border-slate-200 dark:border-slate-800 text-center">
-    <img
-      src="CEO.png"
-      alt="Dr. Asa Siegel"
-      className="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
-    />
-    <h3 className="text-lg font-semibold">Dr. Asa Siegel</h3>
-    <p className="text-slate-500 dark:text-slate-400">CEO &amp; Co-Founder</p>
-    {/* <a
-      href="https://www.linkedin.com/in/asa-siegel/"
-      className="inline-flex mt-3 text-indigo-600 dark:text-indigo-400 hover:underline"
-    >
-      <Linkedin size={20} />
-    </a> */}
-  </div>
-
-  {/* CTO */}
-  <div className="bg-white dark:bg-slate-900 rounded-xl p-6 shadow border border-slate-200 dark:border-slate-800 text-center">
-    <img
-      src="CTO.png"
-      alt="Hussen Shambesh"
-      className="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
-    />
-    <h3 className="text-lg font-semibold">Ethan Nakamura</h3>
-    <p className="text-slate-500 dark:text-slate-400">CTO</p>
-    {/* <a
-      href="https://www.linkedin.com/in/hkshambesh/"
-      className="inline-flex mt-3 text-indigo-600 dark:text-indigo-400 hover:underline"
-    >
-      <Linkedin size={20} />
-    </a> */}
-  </div>
-
-  {/* Head of AI Research */}
-  <div className="bg-white dark:bg-slate-900 rounded-xl p-6 shadow border border-slate-200 dark:border-slate-800 text-center">
-    <img
-      src="Head of AI.png"
-      alt="Louize Fischer"
-      className="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
-    />
-    <h3 className="text-lg font-semibold">Sofia Martinez</h3>
-    <p className="text-slate-500 dark:text-slate-400">Head of AI Research</p>
-    {/* <a
-      href="https://www.linkedin.com/in/louizefischer/"
-      className="inline-flex mt-3 text-indigo-600 dark:text-indigo-400 hover:underline"
-    >
-      <Linkedin size={20} />
-    </a> */}
-  </div>
-</div>
-      </section>
-
       {/* Global Presence */}
       <section>
         <h2 className="text-3xl font-bold mb-8 text-center">Global Presence</h2>
