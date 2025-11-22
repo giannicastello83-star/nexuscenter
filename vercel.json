@@ -40,6 +40,10 @@
       "dest": "frontend/dist/index.html"
     },
     {
+      "src": "/application",
+      "dest": "frontend/dist/index.html"
+    },
+    {
       "src": "/contact",
       "dest": "frontend/dist/index.html"
     },
