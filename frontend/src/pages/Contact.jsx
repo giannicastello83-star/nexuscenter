@@ -1,14 +1,27 @@
 import React, { useState } from "react";
 import { useToast } from "@/components/Toast";
 import ReCAPTCHA from "react-google-recaptcha";
-import emailjs from "emailjs-com";
+
+// Firebase
+import { initializeApp } from "firebase/app";
+import { getFirestore, collection, addDoc } from "firebase/firestore";
+
+// Firebase Config
+const firebaseConfig = {
+  apiKey: "AIzaSyDYijBZM7KI2F09lDJ35hFIdlkHTi6HbMk",
+  authDomain: "company-application-33a02.firebaseapp.com",
+  projectId: "company-application-33a02",
+  storageBucket: "company-application-33a02.firebasestorage.app",
+  messagingSenderId: "453718731624",
+  appId: "1:453718731624:web:057aa525f34468b4a984dd",
+  measurementId: "G-JEF9NF5TDV",
+};
+
+// Init Firebase
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
 
 const RECAPTCHA_SITE_KEY = "6LeGB7ErAAAAABNHG37I5AQXic6FPTOqD5YPSZDK";
-
-// EmailJS Keys
-const SERVICE_ID = "service_fc7ays6_111";
-const TEMPLATE_ID = "template_088vx5u_111";
-const PUBLIC_KEY = "eUgT8p6W0DcsoivAt_111";
 
 export default function Contact() {
   const { push } = useToast();
@@ -16,24 +29,33 @@ export default function Contact() {
   const [token, setToken] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
     if (!token) return;
 
     setLoading(true);
 
-    emailjs
-      .sendForm(SERVICE_ID, TEMPLATE_ID, e.target, PUBLIC_KEY)
-      .then(() => {
-        push("Message sent successfully!");
-        e.target.reset();
-        setToken(null);
-      })
-      .catch((err) => {
-        console.error(err);
-        push("Failed to send message.");
-      })
-      .finally(() => setLoading(false));
+    const formData = {
+      name: e.target.name.value,
+      email: e.target.email.value,
+      company: e.target.company.value,
+      message: e.target.message.value,
+      submittedAt: new Date(),
+    };
+
+    try {
+      await addDoc(collection(db, "contact_form"), formData);
+
+      push("Your message has been submitted successfully!");
+
+      e.target.reset();
+      setToken(null);
+    } catch (error) {
+      console.error("Firestore Error:", error);
+      push("Failed to submit message.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -84,7 +106,7 @@ export default function Contact() {
                 : "bg-slate-700 hover:bg-slate-600 dark:bg-emerald-600 dark:hover:bg-emerald-500"
             }`}
         >
-          {loading ? "Sending..." : "Send"}
+          {loading ? "Submitting..." : "Submit"}
         </button>
       </form>
     </div>
