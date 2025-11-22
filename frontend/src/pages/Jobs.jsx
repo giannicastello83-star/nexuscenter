@@ -236,8 +236,9 @@ export default function Jobs() {
   };
 
   const onApply = (job) => {
-    setActive(job);
+    
     navigate("/contact");
+    setActive(job);
     // setOpen(true);
     // setCaptchaToken(null);
     // setVerified(false);

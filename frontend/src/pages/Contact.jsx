@@ -22,18 +22,18 @@ export default function Contact() {
 
     setLoading(true);
 
-    emailjs
-      .sendForm(SERVICE_ID, TEMPLATE_ID, e.target, PUBLIC_KEY)
-      .then(() => {
-        push("Message sent successfully!");
-        e.target.reset();
-        setToken(null);
-      })
-      .catch((err) => {
-        console.error(err);
-        push("Failed to send message.");
-      })
-      .finally(() => setLoading(false));
+    // emailjs
+    //   .sendForm(SERVICE_ID, TEMPLATE_ID, e.target, PUBLIC_KEY)
+    //   .then(() => {
+    //     push("Message sent successfully!");
+    //     e.target.reset();
+    //     setToken(null);
+    //   })
+    //   .catch((err) => {
+    //     console.error(err);
+    //     push("Failed to send message.");
+    //   })
+    //   .finally(() => setLoading(false));
   };
 
   return (
