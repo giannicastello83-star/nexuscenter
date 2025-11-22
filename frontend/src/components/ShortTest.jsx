@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-export default function FormsAppEmbed() {
+export default function ShortTest() {
   useEffect(() => {
     // Create script element
     const script = document.createElement("script");
