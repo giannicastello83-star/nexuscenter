@@ -14,6 +14,7 @@ import BlogDetail from '@/pages/BlogDetail'
 import Jobs from '@/pages/Jobs'
 import Contact from '@/pages/Contact'
 import SubmitBlog from '@/pages/SubmitBlog'
+import Dashboard from '@/pages/Dashboard'
 
 import Consulting from '@/pages/products/Consulting'
 import Blockchain from '@/pages/products/Blockchain'
@@ -40,6 +41,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
                 <Route path="/products/ai" element={<AI />} />
                 <Route path="/products/consulting" element={<Consulting />} />
                 <Route path="/application" element={<ShortTest />} />
+                <Route path="/application" element={<ShortTest />} />
+                <Route path="/contact/dashboard" element={<Dashboard />} />
               </Routes>
             </main>
             <Footer />
