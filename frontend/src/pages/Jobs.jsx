@@ -14,6 +14,7 @@ import Modal from "@/components/Modal";
 import { useToast } from "@/components/Toast";
 import ReCAPTCHA from "react-google-recaptcha";
 
+const navigate = useNavigate();
 // SHA256 hashing util
 async function sha256(input) {
   const encoder = new TextEncoder();
