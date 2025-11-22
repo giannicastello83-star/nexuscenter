@@ -6,9 +6,9 @@ import emailjs from "emailjs-com";
 const RECAPTCHA_SITE_KEY = "6LeGB7ErAAAAABNHG37I5AQXic6FPTOqD5YPSZDK";
 
 // EmailJS Keys
-const SERVICE_ID = "YOUR_SERVICE_ID";
-const TEMPLATE_ID = "YOUR_TEMPLATE_ID";
-const PUBLIC_KEY = "YOUR_PUBLIC_KEY";
+const SERVICE_ID = "service_fc7ays6";
+const TEMPLATE_ID = "template_088vx5u";
+const PUBLIC_KEY = "eUgT8p6W0DcsoivAt";
 
 export default function Contact() {
   const { push } = useToast();
